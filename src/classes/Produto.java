@@ -48,7 +48,7 @@ public class Produto {
         setDesconto(desconto);
     }
     public String getTipo() {
-        return "Produto: ";
+        return "PRODUTO: ";
     }
     public String getDados() {
         return "Titulo: " + getTitulo() + "\n"
