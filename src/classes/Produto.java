@@ -96,7 +96,7 @@ public class Produto {
 //        System.out.println(aux);
 
 //--------------------------------BREAK--------------------------------------------
-        // Cria um vetor de elementos que são objetos da classe Produto.
+
         Produto[] lista = new Produto[10];
 
         int valor;
