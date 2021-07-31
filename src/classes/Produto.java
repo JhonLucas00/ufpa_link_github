@@ -61,7 +61,7 @@ public class Produto {
     }
     public void Lista() {
         Scanner in = new Scanner(System.in);
-        System.out.printf("\n Titulo: ");
+        System.out.printf("\n Título: ");
         String t = in.nextLine();
 
         System.out.printf("\n Valor: ");
