@@ -5,7 +5,14 @@
  */
 package classes;
 
+import java.awt.Dimension;
 import java.util.Scanner;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 /**
  *
@@ -16,7 +23,7 @@ public class Produto {
     private String titulo;
     private double valor;
     private double desconto;
-    
+
     public void setDesconto(double desconto) {
         this.desconto = desconto;
     }
@@ -28,6 +35,7 @@ public class Produto {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
     public double getDesconto() {
         return desconto;
     }
@@ -39,26 +47,32 @@ public class Produto {
     public String getTitulo() {
         return titulo;
     }
+
     public Produto() {
-        this("Nenhum", 0.0, 0.0); 
+        this("Nenhum", 0.0, 0.0);
     }
+
     public Produto(String titulo, double valor, double desconto) {
         setTitulo(titulo);
         setValor(valor);
         setDesconto(desconto);
     }
+
     public String getTipo() {
         return "PRODUTO: ";
     }
+
     public String getDados() {
         return "Título: " + getTitulo() + "\n"
                 + "Valor: " + getValor() + "\n"
                 + "Desconto: " + getDesconto() + "\n";
     }
+
     public void descreve_produto() {
         String s = getTipo() + "\n" + getDados() + "\n";
         System.out.println(s);
     }
+
     public void Lista() {
         Scanner in = new Scanner(System.in);
         System.out.printf("\n Título: ");
@@ -67,10 +81,10 @@ public class Produto {
         System.out.printf("\n Valor: ");
         double v = in.nextDouble();
 
-        in.nextLine(); 
+        in.nextLine();
         System.out.printf("\n Desconto: ");
         double d = in.nextDouble();
-        
+
         setTitulo(t);
         setValor(v);
         setDesconto(d);
@@ -96,7 +110,7 @@ public class Produto {
 //        System.out.println(aux);
 
 //--------------------------------BREAK--------------------------------------------
-
+        
         Produto[] lista = new Produto[10];
 
         int valor;
@@ -117,7 +131,7 @@ public class Produto {
                     lista[i] = new DVD();
                     break;
             }
-            lista[i].Lista(); 
+            lista[i].Lista();
         }
         for (int i = 0; i < 3; i++) {
             lista[i].descreve_produto();
