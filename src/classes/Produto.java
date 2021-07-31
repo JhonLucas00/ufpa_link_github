@@ -51,7 +51,7 @@ public class Produto {
         return "PRODUTO: ";
     }
     public String getDados() {
-        return "Titulo: " + getTitulo() + "\n"
+        return "Título: " + getTitulo() + "\n"
                 + "Valor: " + getValor() + "\n"
                 + "Desconto: " + getDesconto() + "\n";
     }
