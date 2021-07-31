@@ -14,26 +14,17 @@ import java.util.Scanner;
 public class CD extends Produto {
 
     private String artista;
-
-    // Construtor sem parâmetros.
     public CD() {
-        this("Nenhum", 0.0, 0.0, "Nenhum"); // Chamada ao construtor com param.
+        this("Nenhum", 0.0, 0.0, "Nenhum"); 
     }
-
-    // Construtor com parâmetros.
     public CD(String titulo, double valor, double desconto, String artista) {
-        // Chamada ao construtor da classe Produto.
         super(titulo, valor, desconto);
         setArtista(artista);
     }
-
-    //Função para impressao do tipo.
     @Override
     public String getTipo() {
         return ":: CD ::";
     }
-// Função que retorna o conteúdo do campos desta
-    // classe e da classe Produto (usando super !).
 
     /**
      *
@@ -47,20 +38,13 @@ public class CD extends Produto {
     public void setArtista(String artista_set) {
         artista = (artista_set.equals("")) ? artista_set : "";
     }
-
-    // Função para leitura dos dados via teclado dos
-    // campos desta classe e dos campos da classe
-    // Produto (usando super !).
     @Override
-    public void Lista() { // Leitura dos dados contidos nos campos pertencentes a classe
+    public void Lista() { 
         super.Lista();
 
         Scanner in = new Scanner(System.in);
-        // Leitura dos dados do teclado.
         System.out.printf("\n Artista: ");
         String artista_in = in.nextLine();
-
-        // Enviando os dados lidos para as funcoes set.
         setArtista(artista_in);
     }
 }

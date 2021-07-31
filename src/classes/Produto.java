@@ -16,8 +16,7 @@ public class Produto {
     private String titulo;
     private double valor;
     private double desconto;
-
-    // Métodos para inserir valores nos campos.
+    
     public void setDesconto(double desconto) {
         this.desconto = desconto;
     }
@@ -29,8 +28,6 @@ public class Produto {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
-    // Métodos para retornar os valores contidos nos campos.
     public double getDesconto() {
         return desconto;
     }
@@ -42,58 +39,42 @@ public class Produto {
     public String getTitulo() {
         return titulo;
     }
-
-    // Construtor sem parâmetros.
     public Produto() {
-        this("Nenhum", 0.0, 0.0); // Chamada ao construtor com param.
+        this("Nenhum", 0.0, 0.0); 
     }
-
-    // Construtor com parâmetros.
     public Produto(String titulo, double valor, double desconto) {
         setTitulo(titulo);
         setValor(valor);
         setDesconto(desconto);
     }
-
-    // Função para impressao dos dados do tipo.
     public String getTipo() {
         return "Produto: ";
     }
-
-    // Função que retorna o conteúdo do campos em forma de String.
     public String getDados() {
         return "Titulo: " + getTitulo() + "\n"
                 + "Valor: " + getValor() + "\n"
                 + "Desconto: " + getDesconto() + "\n";
     }
-
-    // Função para impressao dos dados via getDados().
     public void descreve_produto() {
         String s = getTipo() + "\n" + getDados() + "\n";
         System.out.println(s);
     }
-
-    // Função para leitura dos dados via teclado.
     public void Lista() {
         Scanner in = new Scanner(System.in);
-
-        // Leitura dos dados do teclado.
         System.out.printf("\n Titulo: ");
         String t = in.nextLine();
 
         System.out.printf("\n Valor: ");
         double v = in.nextDouble();
 
-        in.nextLine(); // Leitura do enter.
+        in.nextLine(); 
         System.out.printf("\n Desconto: ");
         double d = in.nextDouble();
-
-        // Enviando os dados lidos para as funcoes set.
+        
         setTitulo(t);
         setValor(v);
         setDesconto(d);
     }
-// Fim Classe Lista.
 
     public static void main(String args[]) {
 //        Scanner s = new Scanner(System.in);
@@ -119,15 +100,11 @@ public class Produto {
         Produto[] lista = new Produto[10];
 
         int valor;
-
-        // Preenchendo o vetor com CDs.
         for (int i = 0; i < 3; i++) {
-            // Usuário escolhe se quer cadastrar CD ou DVD.
             System.out.printf("\n 1 (LIVRO) - 2 (CD) - 3 (DVD): ");
             Scanner in = new Scanner(System.in);
             valor = in.nextInt();
             switch (valor) {
-                // Criar CD.
                 case 1:
                     lista[i] = new Livro();
 //                    double din = lista.toString().charAt(1);
@@ -136,21 +113,14 @@ public class Produto {
                 case 2:
                     lista[i] = new CD();
                     break;
-                // Criar DVD.
                 default:
                     lista[i] = new DVD();
                     break;
             }
-            lista[i].Lista(); // Inserir dados no objeto criado seja CD ou
-
-            //DVD.
+            lista[i].Lista(); 
         }
-        // Imprimindo o conteudo de cada elemento do vetor de acordo
-        //com a // classe a que ele pertence (isto é, usando polimorfismo).
         for (int i = 0; i < 3; i++) {
             lista[i].descreve_produto();
-//            int sum = IntStream.of(i).sum();
-//            System.out.println("The sum is " + sum);
         }
         double total = 0;
         for (int i = 0; i < lista.length; i++) {
